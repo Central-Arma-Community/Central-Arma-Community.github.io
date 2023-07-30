@@ -1,0 +1,18 @@
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    transition: 1s ease-in-out;
+  }
+
+  .imageGrid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: 1s ease-in-out;
+  }
+
+  .imageGrid img:hover{
+    transform:scale(1.1);
+    border-radius: 0px;
+  }

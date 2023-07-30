@@ -1,95 +1,73 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import ImageGrid from "../../components/ImageGrid";
+import { BsDiscord, BsGithub } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Home() {
+  const images = ["/Game.jpg", "/Server.jpg", "/Sniper.png"];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+    <>
+      <div className={styles.hero}>
+        <h1 className={styles.heroTitle}>Central Arma Community</h1>
+        <p className={styles.heroDescription}>
+          EXPERIENCE TRUE COMBAT GAMEPLAY IN A MASSIVE MILITARY SANDBOX.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      </div>
+
+      <div className={styles.about}>
+        <h1 className={styles.aboutTitle}>About Us</h1>
+        <Image src={"/CAC.jpg"} width={1280} height={720} />
+        <p className={styles.aboutDescription}>
+          Who are we?<br></br>We are a friendly Arma 3 Community, who look to
+          take Arma communities further, by providing more exciting versions of
+          the game.
+        </p>
+      </div>
+
+      <div className={styles.serverPictures}>
+        <h1 className={styles.serverPicsTitle}>
+          Some pictures from our server
+        </h1>
+        <ImageGrid images={images} />
+      </div>
+
+      <div className={styles.info}>
+        <h1 className={styles.infoTitle}>How to find us?</h1>
+        <div className={styles.IconContainer}>
+          <Link href="https://discord.gg/dNGcyEYK8F" className={styles.icons}>
+            <BsDiscord />
+          </Link>
+          <Link href="https://github.com/TanRayCz/CAC" className={styles.icons}>
+            <BsGithub />
+          </Link>
+        </div>
+
+        <div className={styles.serverList}>
+          <p>
+            CAC Exile Tanoa
+            <br /> Map: Tanoa <br /> Location: South Africa
+          </p>
+          <p>
+            CAC Exile Escape - On demand <br />
+            Map: Tanoa{" "}
+          </p>
+          <p>
+            CAC King Of The Hill - On demand <br />
+            Map: Altis <br />
+            Location: Czech Republic
+          </p>
+          <p>
+            CAC Antistasi 1 Maps: Anizay, Chernarus Summer, Chernarus Winter,
+            Kunduz, Sahrani, Takistan, Tembelan, Virolahti <br />
+            Location: South Africa
+          </p>
+          <p>
+            CAC Antistasi 2 Maps: Malden, Altis, Tanoa, Livonia <br />Location: UK
+          </p>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </>
+  );
 }
