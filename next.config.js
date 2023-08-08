@@ -4,6 +4,9 @@
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+
+  assetPrefix: './',
+
   /**
    * Enable static exports for the App Router.
    *
